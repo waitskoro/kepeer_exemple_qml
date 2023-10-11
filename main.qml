@@ -4,348 +4,627 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.5
 import QtQuick.Controls.Material 2.3
 
-Window {
+ApplicationWindow  {
+    id: window
     visible: true
     width: 800
     height: 500
-    title: qsTr("Hello World")
+    title: qsTr("kepeer")
 
-    Rectangle{
-        id: top_left
-        color: "violet"
+    Grid {
+        columns: 3
+        spacing: 0
 
-        width: parent.width * 1/2
-        height: parent.height * 1/12
-    }
+        Rectangle {
+            id: left_rectangle
+            width: window.width * 1/2
+            height: window.height
 
-    Rectangle{
-        id: center_left
-        color: "white"
+            ColumnLayout{
+                spacing: 0
 
-        width: parent.width * 1/2
-        height: parent.height * 9/12
+                Rectangle{
+                    id: top_left
+                    color: "grey"
+                    width: left_rectangle.width
+                    height: window.height * 0.5/7
 
-        anchors{
-            top: top_left.bottom
+                    Grid{
+                        id: top_grid
+                        columns: 3
+                        width: top_left.width
+                        height: top_left.height
+
+                        Rectangle{
+                            color: "white"
+                            height: top_grid.height
+                            width: top_grid.width * 1/7
+
+                            Text{
+                                text: "r_k"
+                                font{
+                                    bold: true
+                                    pointSize: 10
+                                }
+
+                                anchors{
+                                    horizontalCenter: parent.horizontalCenter
+                                    verticalCenter: parent.verticalCenter
+                                }
+                            }
+                        }
+
+                        Rectangle{
+                            color: "#809fff"
+                            height: top_grid.height
+                            width: top_grid.width * 3/7
+
+                            Text{
+                               text: "11.10.2023 13:49\n11.10.2023 13:49"
+                               color: "white"
+
+                               font{
+                                   pointSize: 8
+                               }
+
+                               anchors{
+                                   horizontalCenter: parent.horizontalCenter
+                                   verticalCenter: parent.verticalCenter
+                               }
+                            }
+                        }
+
+                        Grid{
+                            id: gridthree
+                            columns: 2
+                            height: top_grid.height
+                            width: top_grid.width * 3/7
+
+                            Rectangle{
+                                color: "#809fff"
+                                width: gridthree.width * 1/2
+                                height: gridthree.height  *1/2
+                                Text{
+                                   text: "Оплатить:"
+                                   color: "white"
+
+                                   font{
+                                       pointSize: 8
+                                   }
+                                }
+                            }
+
+                            Rectangle{
+                                color: "#809fff"
+                                width: gridthree.width * 1/2
+                                height: gridthree.height  *1/2
+                                Text{
+                                   text: "0.00"
+                                   color: "white"
+
+                                   font{
+                                       pointSize: 8
+                                   }
+                                }
+                            }
+
+                            Rectangle{
+                                color: "#809fff"
+                                width: gridthree.width * 1/2
+                                height: gridthree.height  *1/2
+                                Text{
+                                   text: "Оплачено:"
+                                   color: "white"
+
+                                   font{
+                                       pointSize: 8
+                                   }
+                                }
+                            }
+
+                            Rectangle{
+                                color: "#809fff"
+                                width: gridthree.width * 1/2
+                                height: gridthree.height  *1/2
+                                Text{
+                                   text: "0.00"
+                                   color: "white"
+
+                                   font{
+                                       pointSize: 8
+                                   }
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+                Rectangle{
+                    color: "yellow"
+                    width: left_rectangle.width
+                    height: window.height * 5.5/7
+                }
+
+                Grid{
+                    id: gridbottom
+                    columns: 3
+                    width: left_rectangle.width
+                    height: window.height * 1/7
+
+                    Grid{
+                        id: gridbuttons
+                        columns: 2
+                        width: gridbottom.width * 1/3
+                        height: gridbottom.height
+
+                        Button{
+                            height: gridbuttons.height * 1/2
+                            width: gridbuttons.width * 1/2
+
+                            palette{
+                                button: "#809fff"
+                            }
+
+                            Text{
+                               text: "Невидимые\n элементы"
+                               color: "white"
+
+                               font{
+                                   pointSize: 6
+                               }
+
+                               anchors{
+                                   horizontalCenter: parent.horizontalCenter
+                                   verticalCenter: parent.verticalCenter
+                               }
+                            }
+                        }
+
+                        Button{
+                            height: gridbuttons.height * 1/2
+                            width: gridbuttons.width * 1/2
+
+                            palette{
+                                button: "grey"
+                            }
+
+                            Text{
+                               text: "PgUp"
+                               color: "white"
+
+                               font{
+                                   pointSize: 12
+                               }
+
+                               anchors{
+                                   horizontalCenter: parent.horizontalCenter
+                                   verticalCenter: parent.verticalCenter
+                               }
+                            }
+                        }
+
+                        Button{
+                            height: gridbuttons.height * 1/2
+                            width: gridbuttons.width * 1/2
+
+                            palette{
+                                button: "grey"
+                            }
+
+                            Text{
+                               text: "PgDn"
+                               color: "white"
+
+                               font{
+                                   pointSize: 12
+                               }
+
+                               anchors{
+                                   horizontalCenter: parent.horizontalCenter
+                                   verticalCenter: parent.verticalCenter
+                               }
+                            }
+                        }
+
+                    }
+
+                    Button{
+                        width: gridbottom.width * 1/3
+                        height: gridbottom.height
+
+                        palette{
+                            button: "#809fff"
+                        }
+
+                        Text{
+                           text: "Меню"
+                           color: "white"
+
+                           font{
+                               pointSize: 10
+                           }
+
+                           anchors{
+                               horizontalCenter: parent.horizontalCenter
+                               verticalCenter: parent.verticalCenter
+                           }
+                        }
+                    }
+
+                    Button{
+                        width: gridbottom.width * 1/3
+                        height: gridbottom.height
+
+                        palette{
+                            button: "#809fff"
+                        }
+
+                        Text{
+                           text: "Модификаторы"
+                           color: "white"
+
+                           font{
+                               pointSize: 10
+                           }
+
+                           anchors{
+                               horizontalCenter: parent.horizontalCenter
+                               verticalCenter: parent.verticalCenter
+                           }
+                        }
+                    }
+                }
+            }
         }
-    }
 
-    Rectangle{
-        id: bottom_left
-            width: parent.width * 1/2
-            height: parent.height * 2/12
-            anchors.top: center_left.bottom
-            color: "white"
+        Rectangle {
+            id: middle_rec
+            color: "#dfe4ed"
+            width: window.width * 0.6/2
+            height: window.height
 
-        RowLayout{
-            id: rowLayout
-            spacing: 5
-            anchors.fill: parent
-            width: parent.width * 1/3
+            Grid {
+                columns: 2
+                spacing: 0
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Бар"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Выпечка"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                      text: "Гарниры"
+                      color: "white"
+
+                      font{
+                          pointSize: 14
+                      }
+
+                      anchors{
+                          horizontalCenter: parent.horizontalCenter
+                          verticalCenter: parent.verticalCenter
+                      }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                      text: "Горячие\n блюда"
+                      color: "white"
+
+                      font{
+                          pointSize: 14
+                      }
+
+                      anchors{
+                          horizontalCenter: parent.horizontalCenter
+                          verticalCenter: parent.verticalCenter
+                      }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                      text: "Десерты"
+                      color: "white"
+
+                      font{
+                          pointSize: 14
+                      }
+
+                      anchors{
+                          horizontalCenter: parent.horizontalCenter
+                          verticalCenter: parent.verticalCenter
+                      }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Завтраки"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Комбо\nблюда"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Нераспределяемые\n         Наценки"
+                       color: "white"
+
+                       font{
+                           pointSize: 8
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Первые\n блюда"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Салаты"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "Сэндвичи"
+                       color: "white"
+
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+
+                Button{
+                    width: middle_rec.width * 1/2
+                    height: window.height * 1/7
+
+                    palette{
+                        button: "#809fff"
+                    }
+
+                    Text{
+                       text: "  Торт\nвесовой"
+                       color: "white"
+                       font{
+                           pointSize: 14
+                       }
+
+                       anchors{
+                           horizontalCenter: parent.horizontalCenter
+                           verticalCenter: parent.verticalCenter
+                       }
+                    }
+                }
+            }
+        }
+
+        Rectangle {
+            id: right_rectangle
+            color: "blue"
+            width: window.width * 0.4/2
+            height: window.height
 
             Grid{
-                columns: 2
-                spacing: 5
+                id: grid_first
+                rows: 3
+                spacing: 0
+                height: right_rectangle.height
+                width: right_rectangle.width
 
-                Button{
-                    palette{
-                        button:"grey"
-                    }
+                Grid{
+                    id: grid__
+                    columns: 2
+                    spacing: 2
+                    height: grid_first.height * 1/14
+                    width: grid_first.width
 
-                    Text{
-                        text: "Невидимые\nэлементы"
-                        color: "white"
+                    Rectangle{
+                        color: "#809fff"
+                        height: grid__.height
+                        width: grid__.width * 3/4
 
-                        anchors{
-                            horizontalCenter: parent.horizontalCenter
-                            verticalCenter: parent.verticalCenter
+                        Text{
+                            text: "не выбрано"
+                            font{
+                                pointSize: 10
+                            }
+                            color: "white"
+
+                            anchors{
+                                horizontalCenter: parent.horizontalCenter
+                                verticalCenter: parent.verticalCenter
+                            }
                         }
                     }
 
+                    Rectangle{
+                        color: "#809fff"
+                        height: grid__.height
+                        width: grid__.width * 1/4
+                    }
                 }
 
-                Button{
-                    palette{
-                        button:"grey"
-                    }
-
+                Rectangle{
+                    width: grid_first.width
+                    height: grid_first.height * 3/14
                     Text{
-                        text: "PgUp"
-                        color: "white"
+                        text: "Осн. Официант "
 
-                        anchors{
-                            horizontalCenter: parent.horizontalCenter
-                            verticalCenter: parent.verticalCenter
-                        }
-                    }
-                }
-
-                Button{
-                    palette{
-                        button:"grey"
-                    }
-
-                    Text{
-                        text: "PgDn"
-                        color: "white"
-
-                        anchors{
-                            horizontalCenter: parent.horizontalCenter
-                            verticalCenter: parent.verticalCenter
-                        }
                     }
                 }
             }
-
-            Button{
-                width: parent.width * 1/3
-                text: "Меню"
-                Layout.fillWidth: true // Расширить кнопку на всю доступную ширину
-                Layout.fillHeight: true
-            }
-
-            Button{
-                width: parent.width * 1/3
-                text: "Модификаторы"
-                Layout.fillWidth: true // Расширить кнопку на всю доступную ширину
-                Layout.fillHeight: true
-            }
-        }
-    }
-
-    Rectangle{
-        id: center_middle
-        color: "gainsboro"
-
-        width: parent.width * 0.6/2
-        height: parent.height
-        anchors{
-            left: center_left.right
         }
 
 
-        Grid{
-            columns: 2
-            spacing: 5
 
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
 
-                Text{
-                    text: "Бар"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Выпечка"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Гарницы"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Горячие\nблюда"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Десерты"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Завтраки"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Комбо\nблюда"
-                    color: "white"
-
-                    anchors{
-                        horizontalCenter: parent.horizontalCenter
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Нераспределенные\nнаценки"
-                    color: "white"
-
-                    anchors{
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Первые\nблюда"
-                    color: "white"
-
-                    anchors{
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Салаты"
-                    color: "white"
-
-                    anchors{
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Сэндвичи"
-                    color: "white"
-
-                    anchors{
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-            Button{
-                width: center_middle.width * 1/2
-                palette{
-                    button:"cornflowerblue"
-                }
-
-                Text{
-                    text: "Торт\nвесовой"
-                    color: "white"
-
-                    anchors{
-                    horizontalCenter: parent.horizontalCenter
-                    verticalCenter: parent.verticalCenter
-                    }
-                }
-            }
-
-        }
-    }
-
-    Rectangle{
-        id:right_
-        color: "green"
-
-        width: parent.width * 0.4/2
-        height: parent.height
-        anchors{
-            left: center_middle.right
-            leftMargin: 5
-        }
     }
 }
