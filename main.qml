@@ -13,138 +13,39 @@ ApplicationWindow  {
 
     Grid {
         columns: 3
-        spacing: 0
 
         Rectangle {
             id: left_rectangle
             width: window.width * 1/2
             height: window.height
+            color: "#dfe4ed"
 
-            ColumnLayout{
-                spacing: 0
+            Grid{
+                rows: 3
 
-                Rectangle{
-                    id: top_left
-                    color: "grey"
+                Item{
                     width: left_rectangle.width
-                    height: window.height * 0.5/7
+                    height: left_rectangle.height * 0.5/7
 
-                    Grid{
-                        id: top_grid
-                        columns: 3
-                        width: top_left.width
-                        height: top_left.height
-
-                        Rectangle{
-                            color: "white"
-                            height: top_grid.height
-                            width: top_grid.width * 1/7
-
-                            Text{
-                                text: "r_k"
-                                font{
-                                    bold: true
-                                    pointSize: 10
-                                }
-
-                                anchors{
-                                    horizontalCenter: parent.horizontalCenter
-                                    verticalCenter: parent.verticalCenter
-                                }
-                            }
-                        }
-
-                        Rectangle{
-                            color: "#809fff"
-                            height: top_grid.height
-                            width: top_grid.width * 3/7
-
-                            Text{
-                               text: "11.10.2023 13:49\n11.10.2023 13:49"
-                               color: "white"
-
-                               font{
-                                   pointSize: 8
-                               }
-
-                               anchors{
-                                   horizontalCenter: parent.horizontalCenter
-                                   verticalCenter: parent.verticalCenter
-                               }
-                            }
-                        }
-
-                        Grid{
-                            id: gridthree
-                            columns: 2
-                            height: top_grid.height
-                            width: top_grid.width * 3/7
-
-                            Rectangle{
-                                color: "#809fff"
-                                width: gridthree.width * 1/2
-                                height: gridthree.height  *1/2
-                                Text{
-                                   text: "Оплатить:"
-                                   color: "white"
-
-                                   font{
-                                       pointSize: 8
-                                   }
-                                }
-                            }
-
-                            Rectangle{
-                                color: "#809fff"
-                                width: gridthree.width * 1/2
-                                height: gridthree.height  *1/2
-                                Text{
-                                   text: "0.00"
-                                   color: "white"
-
-                                   font{
-                                       pointSize: 8
-                                   }
-                                }
-                            }
-
-                            Rectangle{
-                                color: "#809fff"
-                                width: gridthree.width * 1/2
-                                height: gridthree.height  *1/2
-                                Text{
-                                   text: "Оплачено:"
-                                   color: "white"
-
-                                   font{
-                                       pointSize: 8
-                                   }
-                                }
-                            }
-
-                            Rectangle{
-                                color: "#809fff"
-                                width: gridthree.width * 1/2
-                                height: gridthree.height  *1/2
-                                Text{
-                                   text: "0.00"
-                                   color: "white"
-
-                                   font{
-                                       pointSize: 8
-                                   }
-                                }
-                            }
-
-                        }
-
+                    Rectangle{
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
+                        color: "lavender"
                     }
+
                 }
 
-                Rectangle{
-                    color: "yellow"
+                Item{
                     width: left_rectangle.width
-                    height: window.height * 5.5/7
+                    height: left_rectangle.height * 5.5/7
+
+                    Rectangle{
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
+                        color: "yellow"
+                    }
                 }
 
                 Grid{
@@ -159,120 +60,141 @@ ApplicationWindow  {
                         width: gridbottom.width * 1/3
                         height: gridbottom.height
 
-                        Button{
-                            height: gridbuttons.height * 1/2
+                        Item {
                             width: gridbuttons.width * 1/2
-
-                            palette{
-                                button: "#809fff"
-                            }
-
-                            Text{
-                               text: "Невидимые\n элементы"
-                               color: "white"
-
-                               font{
-                                   pointSize: 6
-                               }
-
-                               anchors{
-                                   horizontalCenter: parent.horizontalCenter
-                                   verticalCenter: parent.verticalCenter
-                               }
-                            }
-                        }
-
-                        Button{
                             height: gridbuttons.height * 1/2
-                            width: gridbuttons.width * 1/2
 
-                            palette{
-                                button: "grey"
-                            }
+                            Rectangle {
+                                width: parent.width - 5
+                                height: parent.height - 5
+                                anchors.centerIn: parent
 
-                            Text{
-                               text: "PgUp"
-                               color: "white"
+                                Button {
+                                    anchors.fill: parent
+                                    palette {
+                                        button: "#809fff"
+                                    }
 
-                               font{
-                                   pointSize: 12
-                               }
-
-                               anchors{
-                                   horizontalCenter: parent.horizontalCenter
-                                   verticalCenter: parent.verticalCenter
-                               }
+                                    Text {
+                                        text: "Невидимые\n элементы"
+                                        color: "white"
+                                        font.pointSize: 6
+                                        anchors.centerIn: parent
+                                    }
+                                }
                             }
                         }
 
-                        Button{
+                        Item {
+                            width: gridbuttons.width * 1/2
                             height: gridbuttons.height * 1/2
+
+                            Rectangle {
+                                width: parent.width - 5
+                                height: parent.height - 5
+                                anchors.centerIn: parent
+
+                                Button {
+                                    anchors.fill: parent
+                                    palette {
+                                        button: "grey"
+                                    }
+
+                                    Text {
+                                        text: "PgUp"
+                                        color: "white"
+                                        font.pointSize: 12
+                                        anchors.centerIn: parent
+                                    }
+                                }
+                            }
+                        }
+
+                        Item {
                             width: gridbuttons.width * 1/2
+                            height: gridbuttons.height * 1/2
 
-                            palette{
-                                button: "grey"
+                            Rectangle {
+                                width: parent.width - 5
+                                height: parent.height - 5
+                                anchors.centerIn: parent
+
+                                Button {
+                                    anchors.fill: parent
+                                    palette {
+                                        button: "grey"
+                                    }
+                                    Text {
+                                        text: "PgDn"
+                                        color: "white"
+                                        font.pointSize: 12
+                                        anchors.centerIn: parent
+                                    }
+                                }
                             }
-
-                            Text{
-                               text: "PgDn"
-                               color: "white"
-
-                               font{
-                                   pointSize: 12
-                               }
-
-                               anchors{
-                                   horizontalCenter: parent.horizontalCenter
-                                   verticalCenter: parent.verticalCenter
-                               }
-                            }
-                        }
-
-                    }
-
-                    Button{
-                        width: gridbottom.width * 1/3
-                        height: gridbottom.height
-
-                        palette{
-                            button: "#809fff"
-                        }
-
-                        Text{
-                           text: "Меню"
-                           color: "white"
-
-                           font{
-                               pointSize: 10
-                           }
-
-                           anchors{
-                               horizontalCenter: parent.horizontalCenter
-                               verticalCenter: parent.verticalCenter
-                           }
                         }
                     }
 
-                    Button{
+                    Item {
+                        id: item_butt
                         width: gridbottom.width * 1/3
                         height: gridbottom.height
 
-                        palette{
-                            button: "#809fff"
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#809fff"
+                                }
+
+                                Image {
+                                    id: image_menu
+                                    source: "qrc:/Images/cutlery.png"
+
+                                }
+
+                                Text {
+                                    text: "Меню"
+                                    color: "white"
+                                    font.pointSize: 12
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                }
+                            }
                         }
+                    }
 
-                        Text{
-                           text: "Модификаторы"
-                           color: "white"
+                    Item {
+                        width: gridbottom.width * 1/3
+                        height: gridbottom.height
 
-                           font{
-                               pointSize: 10
-                           }
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
 
-                           anchors{
-                               horizontalCenter: parent.horizontalCenter
-                               verticalCenter: parent.verticalCenter
-                           }
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#809fff"
+                                }
+
+                                Image {
+                                    id: image_settings
+                                    source: "qrc:/Images/cogwheel.png"
+
+                                }
+
+                                Text {
+                                    text: "Модификаторы"
+                                    color: "white"
+                                    font.pointSize: 12
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                }
+                            }
                         }
                     }
                 }
@@ -287,288 +209,313 @@ ApplicationWindow  {
 
             Grid {
                 columns: 2
-                spacing: 0
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Бар"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Бар"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Выпечка"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Выпечка"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                      text: "Гарниры"
-                      color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                      font{
-                          pointSize: 14
-                      }
-
-                      anchors{
-                          horizontalCenter: parent.horizontalCenter
-                          verticalCenter: parent.verticalCenter
-                      }
+                            Text {
+                                text: "Гарниры"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                      text: "Горячие\n блюда"
-                      color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                      font{
-                          pointSize: 14
-                      }
-
-                      anchors{
-                          horizontalCenter: parent.horizontalCenter
-                          verticalCenter: parent.verticalCenter
-                      }
+                            Text {
+                                text: "Горячие\n блюда"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                      text: "Десерты"
-                      color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                      font{
-                          pointSize: 14
-                      }
-
-                      anchors{
-                          horizontalCenter: parent.horizontalCenter
-                          verticalCenter: parent.verticalCenter
-                      }
+                            Text {
+                                text: "Десерты"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Завтраки"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Завтраки"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Комбо\nблюда"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Комбо\nблюда"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Нераспределяемые\n         Наценки"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 8
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Нераспределяемые\n         Наценки"
+                                color: "white"
+                                font.pointSize: 8
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Первые\n блюда"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Первые\n блюда"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Салаты"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Салаты"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "Сэндвичи"
-                       color: "white"
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       font{
-                           pointSize: 14
-                       }
-
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "Сэндвичи"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
 
-                Button{
+                Item {
                     width: middle_rec.width * 1/2
                     height: window.height * 1/7
 
-                    palette{
-                        button: "#809fff"
-                    }
+                    Rectangle {
+                        width: parent.width - 5
+                        height: parent.height - 5
+                        anchors.centerIn: parent
 
-                    Text{
-                       text: "  Торт\nвесовой"
-                       color: "white"
-                       font{
-                           pointSize: 14
-                       }
+                        Button {
+                            anchors.fill: parent
+                            palette {
+                                button: "#809fff"
+                            }
 
-                       anchors{
-                           horizontalCenter: parent.horizontalCenter
-                           verticalCenter: parent.verticalCenter
-                       }
+                            Text {
+                                text: "  Торт\nвесовой"
+                                color: "white"
+                                font.pointSize: 14
+                                anchors.centerIn: parent
+                            }
+                        }
                     }
                 }
+
             }
         }
 
         Rectangle {
             id: right_rectangle
-            color: "blue"
+            color: "#dfe4ed"
             width: window.width * 0.4/2
             height: window.height
 
@@ -613,18 +560,566 @@ ApplicationWindow  {
                 }
 
                 Rectangle{
+                    id: rec_calc
                     width: grid_first.width
                     height: grid_first.height * 3/14
-                    Text{
-                        text: "Осн. Официант "
+                    color: "#dfe4ed"
 
+                    Grid{
+                       id:gri
+                       rows: 2
+                       width: rec_calc.width
+                       height: rec_calc.height
+
+                       Text{
+                           width: gri.width
+                           height: gri.height * 3/4
+                           text: "Осн. Официант "
+
+                       }
+
+                       TextField{
+                           width: gri.width
+                           height: gri.height * 1/4
+                           color: "white"
+                       }
+                    }
+
+
+                }
+
+                Grid{
+                    id: grid_calculator
+                    width: grid_first.width
+                    height: grid_first.height * 4/14
+
+                    columns: 3
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "7"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "8"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "9"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "4"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "5"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "6"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "1"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "2"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "3"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "0"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "."
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
+                    }
+
+                    Item {
+                        width: grid_calculator.width * 1/3
+                        height: grid_calculator.height * 1/4
+
+                        Rectangle {
+                            width: parent.width - 5
+                            height: parent.height - 5
+                            anchors.centerIn: parent
+
+                            Button {
+                                anchors.fill: parent
+                                palette {
+                                    button: "#b5c9eb"
+                                }
+
+                                Text {
+                                    text: "Удл"
+                                    color: "white"
+                                    font.pointSize: 14
+                                    anchors.centerIn: parent
+                                }
+                            }
+                        }
                     }
                 }
+
+            }
+
+            Rectangle{
+              id: parts
+              width: right_rectangle.width
+              height: right_rectangle.height * 6/14
+
+              anchors{ bottom: right_rectangle.bottom }
+
+              Grid{
+                  id: part_one
+                  columns: 2
+                  width: parts.width
+                  height: parts.height * 4/6
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Блюдо"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Кол-во"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Место"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Пречек"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Доп"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Заказ"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Оплата"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+
+                  Item {
+                      width: part_one.width * 1/2
+                      height: part_one.height * 1/4
+
+                      Rectangle {
+                          width: parent.width - 5
+                          height: parent.height - 5
+                          anchors.centerIn: parent
+
+                          Button {
+                              anchors.fill: parent
+                              palette {
+                                  button: "#6a7bc4"
+                              }
+
+                              Text {
+                                  text: "Разбить"
+                                  color: "white"
+                                  font.pointSize: 14
+                                  anchors.centerIn: parent
+                              }
+                          }
+                      }
+                  }
+               }
+
+            Rectangle{
+                id: part_two
+                width: right_rectangle.width
+                height:
+
+                }
+
             }
         }
-
-
-
-
     }
 }
